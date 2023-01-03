@@ -1,0 +1,48 @@
+-- Blocos anônimos
+
+DECLARE  --opcional
+	
+BEGIN --obrigatório
+
+EXCEPTION --opcional
+
+END; --obrigatório
+---------------------------
+
+DECLARE  --opcional
+	
+BEGIN --obrigatório
+	null;
+
+END; --obrigatório
+
+---------------------------
+--Tipos de blocos
+	blocos anônimos	
+	Procedures: não retornam valor etc
+	functions: retornam alguma coisa
+---------------------------
+--PLSQL NÃO É UMA LINGUAGEM DE OUTPUT;
+SET SERVEROUTPUT ON;
+	--TEM QUE LIGAR ANTES DE UTILIZAR  
+DBMS_OUTPUT;
+	--PACOTE PARA MOSTRAR MENSAGENS NA TELA
+--EXEMPLO
+SET SERVEROUTPUT ON;
+DECLARE  --opcional
+	
+BEGIN --obrigatório
+	dbms_output.put_line('PRIMEIRO CODIGO PL/SQL');
+
+END;
+---------------------------
+--EXEMPLO2: BLOCO DENTRO DE OUTRO BLOCO
+DECLARE  
+	
+BEGIN 
+	dbms_output.put_line('PRIMEIRO CODIGO PL/SQL');
+	BEGIN
+		dbms_output.put_line('BLOCO DENTRO DE OUTRO BLOCO');
+	END;
+END;
+
